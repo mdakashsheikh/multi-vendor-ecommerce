@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const { Schema, model} = require('mongoose');
 
-const adminSc = new mongoose.Schema({
+const adminSc = new Schema({
     name: {
         type: String,
         require: true,
@@ -24,4 +24,4 @@ const adminSc = new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model('admins', adminSc)
+module.exports = model('admins', adminSc)

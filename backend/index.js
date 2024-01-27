@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 const PORT = process.env.PORT || 5000
 dbCon();
-app.use('/api', require('./routes/authRoutes'));
+app.use('/api/v1', require('./routes/authRoutes'));
 
 app.listen(PORT, () => {
     console.log(`Listenin on PORT ${PORT}`);
