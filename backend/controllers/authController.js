@@ -5,19 +5,20 @@ const { responseReturn } = require('../utils/response');
 const { createToken } = require('../utils/tokenCreate');
 
 const adminLogin = async(req, res, next) => {
-    console.log(req.body)
+
     const { email, password } = req.body;
    
     try {
         
         const admin = await AdminSc.findOne({ email}).select('+password');
+        console.log(admin)
         if(!admin) {
             responseReturn(res, 404, { error: 'Email not found.'})
         }
 
         const validPassword = await bcrypt.compare(password, admin.password);
         if(!validPassword) {
-
+            responseReturn(res, 400, { error: 'Password is wrong'})
         }
         const token = await createToken({
             id: admin.id,
