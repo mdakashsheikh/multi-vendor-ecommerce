@@ -34,7 +34,23 @@ const adminLogin = async(req, res, next) => {
     }
 }
 
+const getUser = async(req, res, next) => {
+
+    const { id, role } = req;
+
+    try {
+        if(role === 'admin') {
+            const user = await AdminSc.findById(id);
+            responseReturn(res, 200, { userInfo: user })
+        } else {
+            console.log('seler info')
+        }
+    } catch (error) {
+        responseReturn(res, 500, { error: error.message });
+    }
+}
+
 module.exports = {
     adminLogin,
-
+    getUser,
 }
