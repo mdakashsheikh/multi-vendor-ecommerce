@@ -1,4 +1,8 @@
-import { AiFillDashboard, AiOutlineShop } from "react-icons/ai";
+import { AiFillDashboard, AiOutlineShoppingCart } from "react-icons/ai";
+import { BiCategory, BiLoaderCircle } from "react-icons/bi";
+import { FiUser, FiUsers } from "react-icons/fi";
+import { BsCurrencyDollar } from "react-icons/bs";
+import { CiChat1 } from "react-icons/ci";
 
 export const allNav = [
     {
@@ -10,9 +14,52 @@ export const allNav = [
     },
     {
         id: 2,
-        title: 'Order',
-        icon: <AiOutlineShop/>,
+        title: 'Orders',
+        icon: <AiOutlineShoppingCart/>,
         role: 'admin',
-        path: '/admin/orders'
-    }
+        path: '/admin/dashboard/orders'
+    },
+    {
+        id: 3,
+        title: 'Category',
+        icon: <BiCategory/>,
+        role: 'admin',
+        path: '/admin/dashboard/category'
+    },
+    {
+        id: 4,
+        title: 'Sellers',
+        icon: <FiUsers/>,
+        role: 'admin',
+        path: '/admin/dashboard/seller'
+    },
+    {
+        id: 5,
+        title: 'Payment request',
+        icon: <BsCurrencyDollar/>,
+        role: 'admin',
+        path: '/admin/dashboard/payment-request'
+    },
+    {
+        id: 6,
+        title: 'Deactive Seller',
+        icon: <FiUser/>,
+        role: 'admin',
+        path: '/admin/dashboard/deactive-seller'
+    },
+    {
+        id: 7,
+        title: 'Sellers Request',
+        icon: <BiLoaderCircle/>,
+        role: 'admin',
+        path: '/admin/dashboard/sellers-request'
+    },
+    {
+        id: 8,
+        title: 'Chat Seller',
+        icon: <CiChat1/>,
+        role: 'admin',
+        path: '/admin/dashboard/chat-seller'
+    },
+
 ]
