@@ -7,13 +7,13 @@ import { admin_login, messageClear } from '../../store/Reducers/authReducer';
 
 export default function AdminLogin() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { loader, errorMessage, successMessage } = useSelector(state => state.auth)
+    const { loader, errorMessage, successMessage } = useSelector(state => state.auth);
     const [state, setState] = useState({
         email: '',
-        password: ''
-    })
+        password: '',
+    });
 
     const inputHandler = (e) => {
         setState({
