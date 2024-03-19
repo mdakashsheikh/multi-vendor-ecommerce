@@ -15,7 +15,15 @@ const Pagination = ({ pageNumber, setPageNumber, totalItem, parPage, showItem })
         startPage = 1
     }
     const createButton = () => {
+        const btns = []
 
+        for(let i = startPage; i < endPage; i ++ ) {
+            btns.push(
+                <li>
+                    
+                </li>
+            )
+        }
     }
 
     return (
@@ -24,6 +32,9 @@ const Pagination = ({ pageNumber, setPageNumber, totalItem, parPage, showItem })
                 pageNumber > 1  && <li className='w-[33px] h-[33px] rounded-full flex justify-center items-center bg-slate-700 text-[#d0d2d6] cursor-pointer'>
                     <BsChevronDoubleLeft/>
                 </li>
+            }
+            {
+                createButton()
             }
         </ul>
     )
