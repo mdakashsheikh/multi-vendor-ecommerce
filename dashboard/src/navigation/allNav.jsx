@@ -31,7 +31,7 @@ export const allNav = [
         title: 'Sellers',
         icon: <FiUsers/>,
         role: 'admin',
-        path: '/admin/dashboard/seller'
+        path: '/admin/dashboard/sellers'
     },
     {
         id: 5,
