@@ -184,7 +184,7 @@ export default function AdminDashboard() {
                                 <th scope='col' className='py-3 px-4'>Price</th>
                                 <th scope='col' className='py-3 px-4'>Payment Status</th>
                                 <th scope='col' className='py-3 px-4'>Order Status</th>
-                                <th scope='col' className='py-3 px-4'>Active</th>
+                                <th scope='col' className='py-3 px-4'>Action</th>
                             </tr>
                         </thead>
                         <tbody>
