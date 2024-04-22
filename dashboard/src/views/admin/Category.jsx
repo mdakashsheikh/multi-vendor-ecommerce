@@ -3,6 +3,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import Pagination from '../Pagination';
 import { BsImage } from 'react-icons/bs';
+import { MdClose } from "react-icons/md";
 
 const Category = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -12,6 +13,15 @@ const Category = () => {
 
     return (
         <div className='px-2 lg:px-7 pt-5'>
+            <div className='flex lg:hidden justify-between items-center mb-5 p-4 bg-[#283046] rounded-none'>
+                <h1 className='text-[#d0d2d6] font-semibold text-lg'>Categories</h1>
+                <button
+                    onClick={() => setShow(true)}
+                    className='bg-indigo-500 shadow-lg hover:shadow-indigo-500/50 px-4 py-2 cursor-pointer text-white rounded-sm text-sm'
+                >
+                    Add
+                </button>
+            </div>
             <div className='flex flex-wrap w-full'>
                 <div className='w-full lg:w-7/12 '>
                     <div className='w-full p-4 bg-[#283046] rounded-md'>
@@ -79,10 +89,15 @@ const Category = () => {
                     </div>
                 </div>
 
-                <div className={`w-full lg:w-5/12 translate-x-100 lg:relative lg:right-0 fixed ${show ? 'right-0' : '-right-[340px]'} z-20 top-0 transition-all duration-500`}>
+                <div className={`w-full lg:w-5/12 translate-x-100 lg:relative lg:right-0 fixed ${show ? 'right-0' : '-right-[340px]'} z-[9999] top-0 transition-all duration-500`}>
                     <div className='w-full pl-5'>
                         <div className='bg-[#283046] h-screen lg:h-auto px-3 py-2 lg:rounded-md text-[#d0d2d6]'>
-                            <h1 className='text-[#d0d2d6] font-semibold text-xl mb-4 w-full text-center'>Add Category</h1>
+                            <div className='flex justify-between items-center'>
+                                <h1 className='text-[#d0d2d6] font-semibold text-xl mb-4'>Add Category</h1>
+                                <div className='block lg:hidden cursor-pointer'>
+                                    <MdClose className='text-[#d0d2d6]' onClick={() => setShow(false)}/>
+                                </div>
+                            </div>
                             <form>
                                 <div className='flex flex-col w-full gap-1 mb-3'>
                                     <label htmlFor='name'>Category name</label>
@@ -96,7 +111,7 @@ const Category = () => {
                                 </div>
                                 <div>
                                     <label htmlFor='image' className='flex justify-center items-center flex-col h-[238px] cursor-pointer border border-dashed hover:border-indigo-500 w-full border-[#d0d2d6]'>
-                                        <span><BsImage/></span>
+                                        <span><BsImage /></span>
                                         <span>Select Image</span>
                                     </label>
                                 </div>
