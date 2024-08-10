@@ -10,8 +10,6 @@ const outerElementType = forwardRef((props, ref) => (
 ))
 const PaymentRequest = () => {
 
-    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
     const Row = ({ index, style }) => {
         return (
             <div style={style} className='flex text-sm'>
@@ -45,7 +43,7 @@ const PaymentRequest = () => {
                         </div>
                         {
                             <List 
-                                style={{minWidth: '340px'}}
+                                style={{minWidth: '340px', overflowX: 'hidden'}}
                                 className='List'
                                 height={350}
                                 itemCount={200000}
