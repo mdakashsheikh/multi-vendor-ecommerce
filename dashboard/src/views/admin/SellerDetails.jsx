@@ -13,37 +13,78 @@ const SellerDetails = () => {
                                 alt=''
                             />
                         </div>
-
-                        <div className='w-4/12'>
-                            <div className='px-0 md:px-5 py-2'>
-                                <div className='py-2 text-lg'>
-                                    <h2>Basic Info</h2>
+                    </div>
+                    <div className='w-4/12'>
+                        <div className='px-0 md:px-5 py-2'>
+                            <div className='py-2 text-lg'>
+                                <h2>Basic Info</h2>
+                            </div>
+                            <div className='flex justify-between text-sm flex-col gap-2 p-4 bg-slate-800 rounded-md'>
+                                <div className='flex gap-2'>
+                                    <span>Name : </span>
+                                    <span>Sheikh Farid</span>
                                 </div>
-                                <div className='w-64 flex justify-between text-sm flex-col gap-2 p-4 bg-slate-800 rounded-md'>
-                                    <div className='flex gap-2'>
-                                        <span>Name : </span>
-                                        <span>Sheikh Farid</span>
-                                    </div>
-                                    <div className='flex gap-2'>
-                                        <span>Email : </span>
-                                        <span>farid@gmail.com</span>
-                                    </div>
-                                    <div className='flex gap-2'>
-                                        <span>Role : </span>
-                                        <span>Seller</span>
-                                    </div>
-                                    <div className='flex gap-2'>
-                                        <span>Status : </span>
-                                        <span>Pending</span>
-                                    </div>
-                                    <div className='flex gap-2'>
-                                        <span>Payment Account : </span>
-                                        <span>active</span>
-                                    </div>
+                                <div className='flex gap-2'>
+                                    <span>Email : </span>
+                                    <span>farid@gmail.com</span>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <span>Role : </span>
+                                    <span>Seller</span>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <span>Status : </span>
+                                    <span>Pending</span>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <span>Payment Account : </span>
+                                    <span>active</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div className='w-4/12'>
+                        <div className='px-0 md:px-5 py-2'>
+                            <div className='py-2 text-lg'>
+                                <h2>Address</h2>
+                            </div>
+                            <div className='flex justify-between text-sm flex-col gap-2 p-4 bg-slate-800 rounded-md'>
+                                <div className='flex gap-2'>
+                                    <span>Shop Name : </span>
+                                    <span>Farid Store</span>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <span>Division : </span>
+                                    <span>Khulna</span>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <span>District : </span>
+                                    <span>Narail</span>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <span>Sub-District : </span>
+                                    <span>Kalia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form>
+                        <div className='flex gap-4 py-3'>
+                            <select className='px-4 py-2 hover:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]'>
+                                <option value="">--select status</option>
+                                <option value="active">Active</option>
+                                <option value="deactive">Deactive</option>
+                            </select>
+
+                            <button className='bg-blue-500   hover:shadow-blue-500/50 hover:shadow-lg hover:text-white px-7 py-2 rounded-md my-2'>
+                                Submit
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
