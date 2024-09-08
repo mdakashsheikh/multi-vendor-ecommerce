@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { IoMdClose } from "react-icons/md"
+import { IoMdClose } from "react-icons/io"
 
 const ChatSeller = () => {
     const [show, setShow] = useState(false)
@@ -11,7 +11,40 @@ const ChatSeller = () => {
                         <div className='w-full h-[calc(100vh-177px)] bg-[#252b3b] md:bg-transparent overflow-y-auto'>
                             <div className='flex text-xl justify-between items-center p-4 md:p-0 md:px-3 md:pb-3 text-white '>
                                 <h2>Sellers</h2>
-                                <span className='block cursor-pointer'><IoMdClose /></span>
+                                <span onClick={() => setShow(!show)} className='block cursor-pointer md:hidden'><IoMdClose /></span>
+                            </div>
+                            <div className={`h-15 flex justify-start gap-2 items-center text-white px-2 py-2 rounded-sm cursor-pointer `}>
+                                <div className='relative'>
+                                    <img className='h-10 w-10 border-white border-2 max-w-10 p-[2px] rounded-full' src='http://localhost:5173/images/admin.jpg' alt=''/>
+                                    <div className='w-3 h-3 bg-green-500 rounded-full absolute right-0 bottom-0'></div>
+                                </div>
+                                <div className='flex justify-center items-start flex-col w-full'>
+                                    <div className='flex justify-between items-center w-full'>
+                                        <h2 className='text-base font-semibold'>Sheikh Farid</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`h-15 flex justify-start gap-2 items-center text-white px-2 py-2 rounded-sm cursor-pointer `}>
+                                <div className='relative'>
+                                    <img className='h-10 w-10 border-white border-2 max-w-10 p-[2px] rounded-full' src='http://localhost:5173/images/admin.jpg' alt=''/>
+                                    <div className='w-3 h-3 bg-green-500 rounded-full absolute right-0 bottom-0'></div>
+                                </div>
+                                <div className='flex justify-center items-start flex-col w-full'>
+                                    <div className='flex justify-between items-center w-full'>
+                                        <h2 className='text-base font-semibold'>Sheikh Farid</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`h-15 flex justify-start gap-2 items-center text-white px-2 py-2 rounded-sm cursor-pointer `}>
+                                <div className='relative'>
+                                    <img className='h-10 w-10 border-white border-2 max-w-10 p-[2px] rounded-full' src='http://localhost:5173/images/admin.jpg' alt=''/>
+                                    <div className='w-3 h-3 bg-green-500 rounded-full absolute right-0 bottom-0'></div>
+                                </div>
+                                <div className='flex justify-center items-start flex-col w-full'>
+                                    <div className='flex justify-between items-center w-full'>
+                                        <h2 className='text-base font-semibold'>Sheikh Farid</h2>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
