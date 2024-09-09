@@ -70,10 +70,44 @@ const ChatSeller = () => {
                         </div>
                         
                         <div className='py-4 '>
-                            <div className='bg-slate-800 h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto'></div>
+                            <div className='bg-slate-800 h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto'>
+                                <div className='w-full flex justify-start items-center '>
+                                    <div className='flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]'>
+                                        <div className=''>
+                                            <img className='h-10 w-10 border-white border-2 max-w-10 p-[2px] rounded-full' src='http://localhost:5173/images/admin.jpg' alt=''/>
+                                        </div>
+                                        <div className='flex justify-center items-start flex-col w-full bg-blue-500 text-white shadow-lg shadow-blue-500/50 py-1 px-2 rounded-r-lg rounded-tl-lg'>
+                                            <span>How are you ?</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='w-full flex justify-end items-center '>
+                                    <div className='flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]'>
+                                        <div className='flex justify-center items-start flex-col w-full bg-blue-500 text-white shadow-lg shadow-blue-500/50 py-1 px-2 rounded-l-lg rounded-tr-lg'>
+                                            <span>How are you ?</span>
+                                        </div>
+                                        <div className=''>
+                                            <img className='h-10 w-10 border-white border-2 max-w-10 p-[2px] rounded-full' src='http://localhost:5173/images/admin.jpg' alt=''/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='w-full flex justify-start items-center '>
+                                    <div className='flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]'>
+                                        <div className=''>
+                                            <img className='h-10 w-10 border-white border-2 max-w-10 p-[2px] rounded-full' src='http://localhost:5173/images/admin.jpg' alt=''/>
+                                        </div>
+                                        <div className='flex justify-center items-start flex-col w-full bg-blue-500 text-white shadow-lg shadow-blue-500/50 py-1 px-2 rounded-r-lg rounded-tl-lg'>
+                                            <span>How are you ?</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <form className='flex gap-3'>
                             <input className='w-full flex justify-between px-2 border border-slate-700 items-center py-[5px] focus:border-blue-500 rounded-md outline-none bg-transparent text-[#d0d2d6]' type='text' placeholder='input your message'/>
+                            <button className='bg-cyan-500 shadow-lg hover:shadow-cyan-500/50 font-semibold w-[75px] h-[35px] rounded-md text-white flex justify-center items-center'>Send</button>
                         </form>
                     </div>
                 </div>
