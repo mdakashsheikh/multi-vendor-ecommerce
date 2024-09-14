@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const AddProduct = () => {
+    const [state, setState] = useState({
+        name: "",
+        description: "",
+        discount: "",
+        price: "",
+        brand: "",
+        stock: ""
+    })
+
+    const inputHandle = (e) => {
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
+        })
+    }
     return (
         <div className='px-2 lg:px-7 pt-5'>
             <div className='w-full p-4 bg-[#283046] rounded-md'>
@@ -19,10 +34,28 @@ const AddProduct = () => {
                     <form>
                         <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
                             <div className='flex flex-col w-full gap-1'>
-                                <label htmlFor='name'>Product Name</label>
+                                <label htmlFor='name'>Product name</label>
+                                <input 
+                                    type='text' 
+                                    placeholder='product name' 
+                                    name='name' 
+                                    id='name'
+                                    onChange={inputHandle}
+                                    value={state.name}
+                                    className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]'
+                                />
                             </div>
                             <div className='flex flex-col w-full gap-1'>
-
+                                <label htmlFor='brand'>Product brand</label>
+                                <input 
+                                    type='text' 
+                                    placeholder='product brand' 
+                                    name='brand' 
+                                    id='brand'
+                                    onChange={inputHandle}
+                                    value={state.brand}
+                                    className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]'
+                                />
                             </div>
                         </div>
                     </form>
