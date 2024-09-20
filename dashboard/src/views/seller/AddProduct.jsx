@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { BsImages } from "react-icons/bs"
 
 const AddProduct = () => {
     const categories = [
@@ -56,6 +57,28 @@ const AddProduct = () => {
             setAllCategory(categories)
         }
     }
+    
+    const [images, setImages] = useState([])
+    const [imageShow, setImageShow] = useState([])
+
+    const handleImage = (e) => {
+        const files = e.target.files;
+        const length = files.length;
+
+        if(length > 0) {
+            setImages([...images, ...files])
+            let imageUrl = []
+
+            for(let i = 0; i < length; i++) {
+                imageUrl.push({ url: URL.createObjectURL(files[i])})
+            }
+
+            setImageShow([...imageShow, ...imageUrl])
+        }
+    }
+
+    console.log(images)
+    console.log(imageShow)
 
     // useEffect(() => {
     //     setAllCategory(categories)
@@ -182,7 +205,7 @@ const AddProduct = () => {
                                 />
                             </div>
                         </div>
-                        <div className='flex flex-col w-full gap-1 text-[#d0d2d6]'>
+                        <div className='flex flex-col w-full gap-1 text-[#d0d2d6] mb-4'>
                             <label htmlFor='description'>Description</label>
                             <textarea
                                 placeholder='Description' 
@@ -195,6 +218,28 @@ const AddProduct = () => {
                             ></textarea>
                         </div>
 
+                        <div className='grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-4 xs:gap-4 gap-3 w-full text-[#d0d2d6] mb-4'>
+                            {
+                                imageShow?.map((img, index) => (
+                                    <div className='h-[180px] relative'>
+                                        <label htmlFor={index}>
+                                            <img className='w-full h-full rounded' src={img.url} alt="" />
+                                        </label>
+                                    </div>
+                                ))
+                            }
+                            <label htmlFor='image' className='flex justify-center items-center flex-col h-[180px] cursor-pointer border border-dashed hover:border-indigo-500 w-full'>
+                                <span><BsImages/></span>
+                                <span>select image</span>
+                            </label>
+                            <input 
+                                multiple 
+                                onChange={handleImage} 
+                                type='file' 
+                                id='image' 
+                                hidden
+                            />
+                        </div>
                     </form>
                 </div>
             </div>
