@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BsImages } from "react-icons/bs"
+import { IoCloseSharp } from "react-icons/io5"
 
 const AddProduct = () => {
     const categories = [
@@ -75,6 +76,27 @@ const AddProduct = () => {
 
             setImageShow([...imageShow, ...imageUrl])
         }
+    }
+
+    const imageChange = (img, i) => {
+        if(img) {
+            let tempUrl = imageShow
+            let tempImages = images
+
+            tempImages[i] = img;
+            tempUrl[i] = { url: URL.createObjectURL(img)}
+
+            setImageShow([...tempUrl])
+            setImages([...tempImages])
+        }
+    }
+
+    const removeImage = (i) => {
+        const filterImage = images?.filter((img, index) => index !== i)
+        const filterImageUrl = imageShow?.filter((img, index) => index !== i)
+
+        setImages(filterImage)
+        setImageShow(filterImageUrl)
     }
 
     console.log(images)
@@ -225,6 +247,18 @@ const AddProduct = () => {
                                         <label htmlFor={index}>
                                             <img className='w-full h-full rounded' src={img.url} alt="" />
                                         </label>
+                                        <input
+                                            onChange={(e) => imageChange(e.target.files[0], index)}
+                                            type='file' 
+                                            id={index} 
+                                            hidden
+                                        />
+                                        <span
+                                            onClick={() => removeImage(index)}
+                                            className='p-2 z-10 cursor-pointer bg-slate-700 hover:shadow-lg hover:shadow-slat400/40 text-white absolute top-1 right-1 rounded-full'
+                                        >
+                                            <IoCloseSharp/>
+                                        </span>
                                     </div>
                                 ))
                             }
@@ -239,6 +273,11 @@ const AddProduct = () => {
                                 id='image' 
                                 hidden
                             />
+                        </div>
+                        <div className='flex'>
+                            <button className='bg-blue-500 hover:shadow-blue-500/50 hover:shadow-lg hover:text-white px-7 py-2 rounded-md my-2'>
+                                Add Product
+                            </button>
                         </div>
                     </form>
                 </div>
