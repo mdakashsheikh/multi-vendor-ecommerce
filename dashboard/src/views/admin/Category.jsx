@@ -40,7 +40,7 @@ const Category = () => {
                                 className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]'
                             />
                         </div>
-                        <div className='relative overflow-x-auto '>
+                        <div className='relative overflow-x-auto'>
                             <table className='w-full text-sm text-left text-[#d0d2d6]'>
                                 <thead className='text-sm text-[#d0d2d6] uppercase border-b border-slate-700'>
                                     <tr>
