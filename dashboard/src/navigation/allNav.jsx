@@ -70,10 +70,10 @@ export const allNav = [
     },
     {
         id: 10,
-        title: 'Add Product',
+        title: 'Product',
         icon: <AiFillDashboard/>,
         role: 'seller',
-        path: '/seller/dashboard/add-product'
+        path: '/seller/dashboard/products'
     },
     {
         id: 11,
