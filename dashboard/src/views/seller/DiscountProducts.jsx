@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaEdit, FaEye, FaTrash } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import Search from '../components/Search';
+import Pagination from '../Pagination';
 
 const DiscountProducts = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -74,6 +75,15 @@ const DiscountProducts = () => {
                         }
                     </tbody>
                 </table>
+            </div>
+            <div className='w-full flex justify-end mt-5 bottom-4 right-4'>
+                <Pagination
+                    pageNumber={currentPage}
+                    setPageNumber={setCurrentPage}
+                    totalItem={50}
+                    parPage={parPage}
+                    showItem={3}
+                />
             </div>
         </div>
     )
